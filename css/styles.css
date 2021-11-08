@@ -2,6 +2,10 @@ textarea{
   width: 100%;
   min-height: 125px
 }
+#res{
+  background: #565656;
+  color: #FFFFFF
+}
 button{
   float: right
 }

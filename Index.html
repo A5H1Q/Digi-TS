@@ -2,21 +2,32 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DigiSpark Text Splitter</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DigiSpark Text Splitter</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-<textarea id="str"></textarea>
-<button onclick="onSplit()">PROCESS</button>
-<script>
-const onSplit=()=>{
-  console.error("oke")
-}
+  <textarea id="str">
+  line 1'
+  str[i++]="\0";
+  \0line 2"
+  line 3
+</textarea>
+  <button onclick="onSplit()">PROCESS</button>
+  <br>
+  <textarea id="res"></textarea>
+  <script>
+    const onSplit = () => {
+      const inp=document.getElementById("str");
+      const out=document.getElementById("res");
 
-</script>
-</body>
-
-</html>
+      let lines = inp.value.split("\n");
+      for (var i = 0; i < lines.length; i++) {
+        res.value+='\nDigiKeyboard.print(F("'+lines[i].replaceAll("\\","\\\\").replaceAll('"','\\"')+'"));';
+      }
+    }
+  </script>
+    </body>
+    </html>
