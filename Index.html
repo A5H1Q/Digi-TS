@@ -9,17 +9,22 @@
 </head>
 
 <body>
+  <button onclick="out.value='';cls(0)">OPEN</button>
   <button onclick="inp.value='';">CLEAR</button>
   <textarea id="str">
-  line 1'
-  str[i++]="\0";
-  \0line 2"
-  line 3
+  Edge Conditions:
+  
+  `line '1"`
+  "\0";
+  \\ comment
+  //hola
+  \" and /"
+  \0
 </textarea>
+  <span id="msg">copied!</span>
   <button onclick="onSplit()">PROCESS</button>
-  <button onclick="out.value='';">CLEAR</button>
-  <button onclick="out.select();document.execCommand('copy');">COPY</button>
-  <br>
+  <button onclick="out.value='';cls(0)">CLEAR</button>
+  <button onclick="out.select();document.execCommand('copy');cls(1)">COPY</button>
   <textarea id="res"></textarea>
   <script>
     const inp = document.getElementById("str");
@@ -30,6 +35,11 @@
       for (var i = 0; i < lines.length; i++) {
         res.value += '\nDigiKeyboard.println(F("' + lines[i].replaceAll("\\", "\\\\").replaceAll('"', '\\"') + '"));';
       }
+      cls(0);
+    }
+
+    const cls = (x) => {
+      document.getElementById('msg').style.opacity = x;
     }
   </script>
 </body>

@@ -6,6 +6,10 @@ textarea{
   background: #565656;
   color: #FFFFFF
 }
+#msg{
+  opacity: 0;
+}
 button{
-  float: right
+  float: right;
+  margin: 5px
 }
